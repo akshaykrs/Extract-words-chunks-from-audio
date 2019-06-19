@@ -81,4 +81,45 @@ plt.ylim(-1, 1)
 ```
 ![alt text](https://github.com/akshaykrs/Extract-words-chunks-from-audio/blob/master/fig.%202.png "Fig. 2")
 
+# Step 6: Building Chunks: 
+
+If you noticed I have stored beat_times in beats array. This array will be used to have start and end times of words and chunks will be formed and stored using pydub.Audiosegment from waveform as shown bellow:
+
+NOTE: Here we have time in seconds in beat_times and pydub accepts time as mm (milliseconds) so we will mutiply time factor by 1000 to convert it into milliseconds. 
+
+
+```python 
+start_time = 0
+end_time = 0
+count = 0
+
+for i in beat_times:
+    if i != max(beat_times):
+        start = beat_times[count]*1000
+        end = beat_times[count+1]*1000
+        print('/n')
+        newAudio = AudioSegment.from_wav("akw.wav")
+        newAudio = newAudio[start:end]
+        newAudio.export(('newSong{}.wav').format(count), format="wav")
+    else:
+        newAudio = AudioSegment.from_wav("akww.wav")
+        start = max(beat_times)*1000
+        newAudio = newAudio[start:]
+        newAudio.export('new.wav', format="wav")
+    count = count + 1
+ ```
+ # Conclusion: 
+ 
+ You can successful create chunks of words from given audio file (.wav) as input which has minimal noise as possible. 
+ 
+ # Future Work: 
+ 
+ After this I want to extend it to more accurate and noise proof method for chunking. 
+ 
+ # What it can be used for: 
+ 
+ You can use it to feed your neural network like I did. 
+   
+
+
 
