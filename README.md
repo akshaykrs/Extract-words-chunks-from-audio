@@ -7,7 +7,8 @@ In todays senarios we are able to get chunks according to sentences from audio f
 1. Python 3.7
 2. Librosa
 3. Pydub
-4. Jupyter Notebook
+4. Matplotlib
+5. Jupyter Notebook
 
 In this I am not doing any preprocessing like noise reduction and all. Since, you can find many things for it. 
 
@@ -23,3 +24,8 @@ I am using Librosa and pydub for this task. So, If you have these libraries inst
 
 !pip3 install pydub 
 
+Now, you have to import these libraries as follows:
+<python>
+import librosa 
+import matplotlib.pyplot as plt
+</python>
