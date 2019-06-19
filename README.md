@@ -19,11 +19,10 @@ First make a folder which will contain main audio file from which you have to ge
 # Step 2: Import libraries:
 
 I am using Librosa and pydub for this task. So, If you have these libraries installed It's good. But, If not then execute these commands on jupyter notebook. 
-
+```python
 !pip3 install librosa 
-
 !pip3 install pydub 
-
+```
 Now, you have to import these libraries as follows:
 
 ```python
