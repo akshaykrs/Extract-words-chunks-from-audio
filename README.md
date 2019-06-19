@@ -26,7 +26,7 @@ I am using Librosa and pydub for this task. So, If you have these libraries inst
 
 Now, you have to import these libraries as follows:
 
-'''
+'''python
 import librosa 
 import matplotlib.pyplot as plt
 '''
