@@ -58,3 +58,27 @@ plt.figure(figsize=(14, 5))
 librosa.display.waveplot(x, sr=sr)
 ```
 ![alt text](https://github.com/akshaykrs/Extract-words-chunks-from-audio/blob/master/fig.%201.png "Fig. 1")
+
+# Step 5: Using librosa:
+
+librosa have one function beat_track which we can use to find the time of starting and ending of words in waveform as follows: 
+
+```python 
+from pydub import AudioSegment
+
+beats = []
+tempo, beat_times = librosa.beat.beat_track(x, sr=sr, start_bpm=60, units='time',trim=True)
+beats_time_stat()
+print(len(beat_times))
+print(beat_times)
+beats = beat_times
+print(beats)
+
+plt.figure(figsize=(14, 5))
+librosa.display.waveplot(x, alpha=0.6)
+plt.vlines(beat_times, -1, 1, color='r')
+plt.ylim(-1, 1)
+```
+![alt text](https://github.com/akshaykrs/Extract-words-chunks-from-audio/blob/master/fig.%202.png "Fig. 2")
+
+
