@@ -28,4 +28,33 @@ Now, you have to import these libraries as follows:
 ```python
 import librosa 
 import matplotlib.pyplot as plt
+from pydub import AudioSegment
 ```
+# Step 3: Feature Extractions: 
+
+In this we will see four main features which every audio wav file have.
+
+1. Zero Crossing: Rate at which the signal changes from positive to negative or back.
+2. Spectral Centroids: Indicates where centre of mass of sound is located. 
+3. Spectral RollOff: Frequency below which a specified percentage of total spectral energy. 
+4. MFCC: (MOST IMPORTANT) A small set of features (10-20) which concisely describe the overall shape of a spectral envelope.
+
+By the way we are not using this to make chunks but these are important to analyse audio and are must to learn before doing operations on audio files. 
+
+# Step 4: Loading Audio: 
+
+```python 
+import librosa
+audio_path = 'akw.wav'
+x , sr = librosa.load(audio_path)
+```
+To check whether file is uploaded sucessfully plot as wwaveform as follows: 
+
+```python 
+%matplotlib inline
+import matplotlib.pyplot as plt
+import librosa.display
+plt.figure(figsize=(14, 5))
+librosa.display.waveplot(x, sr=sr)
+```
+![alt text](https://github.com/akshaykrs/Extract-words-chunks-from-audio/blob/master/fig.%201.png "Fig. 1")
